@@ -12,7 +12,7 @@ void TransferManager::recive(const char* file_to_recive)
 	std::cout << "recive message..." << std::endl;
 	for (auto v : vectorOfPtr)
 	{
-		std::cout << v->index << v->size << " | ";
+		std::cout << v->index << " " << v->size << " | ";
 		ptr = reinterpret_cast<char*>(v) + sizeof(Package);
 		for (int i = 0; i < v->size; i++)
 		{
@@ -30,7 +30,7 @@ void TransferManager::send(const char* file_to_send, const char* send_to, const 
 	std::cout << "send message..." << std::endl;
 	for (auto i = 0, j = 0; i < this->vectorOfPackages.size(); i++)
 	{
-		std::cout << this->vectorOfPackages[i].index << this->vectorOfPackages[i].size << " | " ;
+		std::cout << this->vectorOfPackages[i].index << " " << this->vectorOfPackages[i].size << " | " ;
 		for (auto k = j; k < this->vectorOfPackages[i].size + j; k++)
 			std::cout << filecontest[k];
 		std::cout << std::endl;
